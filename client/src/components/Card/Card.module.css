@@ -1,0 +1,266 @@
+.cardContainer {
+	/* background-color: aliceblue; */
+	/* width: 100%; */
+	/* max-width: 25% ; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	/* gap: 5px; */
+	min-height: 23rem;
+	border-radius: 20px;
+	padding: 5px;
+}
+
+.cardContainer h2 {
+	font-size: bold;
+	text-decoration: none;
+	color: #000000;
+}
+
+.cardImg {
+	object-fit: cover;
+	width: 80%;
+}
+
+.cardTypeContainer {
+	/* min-width: 50%; */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column; 
+
+	gap: 10px;
+}
+
+.cardTypeImg img {
+   max-width: 30px;
+   object-fit: cover;
+   border-radius: 4px;
+	scale: 2;
+}
+
+/* Colores de fondo para diferentes tipos */
+.grass-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#78c850,
+		#5faf42,
+		#469634,
+		#2d7e26,
+		#116718
+	); /* Color para tipo Grass */
+}
+
+.fire-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#f08030,
+		#e37527,
+		#d66a1e,
+		#b85e1e,
+		#943f02
+	); /* Color para tipo Fire */
+}
+
+.water-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#6890f0,
+		#5577c9,
+		#435fa3,
+		#31497f,
+		#21335c
+	); /* Color para tipo Water */
+}
+
+.shadow-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#2e2c2c,
+		#242323,
+		#1a191a,
+		#101010,
+		#000000
+	);
+}
+
+.fairy-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#eb8ac5,
+		#d27db0,
+		#b9709c,
+		#a16388,
+		#895775
+	);
+}
+
+.dragon-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#593ef2,
+		#4833c8,
+		#39299f,
+		#2a1e78,
+		#1d1453
+	);
+}
+
+.fighting-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#d61010,
+		#af0714,
+		#880513,
+		#62050f,
+		#3f0505
+	);
+}
+
+.dark-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#35366f,
+		#2a2c5b,
+		#212348,
+		#181a35,
+		#101023
+	);
+}
+
+.electric-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#ffbd07,
+		#d49e07,
+		#b88806,
+		#966f05,
+		#7e5d03
+	);
+}
+
+.flying-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#2ed6ee,
+		#48bab5,
+		#5a9c86,
+		#5f7e63,
+		#5a624c
+	);
+}
+
+.ghost-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#6e1c79,
+		#5a1863,
+		#46134d,
+		#330e38,
+		#220825
+	);
+}
+
+.ground-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#be982f,
+		#a48227,
+		#8a6d1f,
+		#715917,
+		#594510
+	);
+}
+
+.ice-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#5cc9d8,
+		#51b1be,
+		#459aa6,
+		#3b848d,
+		#306e76
+	);
+}
+
+.normal-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#9a9c90,
+		#83847a,
+		#6d6d65,
+		#575751,
+		#42423e
+	);
+}
+
+.poison-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#ff2fa2,
+		#c92b8c,
+		#972572,
+		#691d56,
+		#3f1339
+	);
+}
+
+.psychic-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#ff0e72,
+		#dd256d,
+		#bc2f66,
+		#9b335d,
+		#7c3452
+	);
+}
+
+.rock-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#becf59,
+		#a4b34c,
+		#8a9840,
+		#727d34,
+		#5a6428
+	);
+}
+
+.steel-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#707659,
+		#556f61,
+		#4a6565,
+		#4b5860,
+		#4c4d53
+	);
+}
+
+.unknown-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#3ee1f0,
+		#00cfff,
+		#00b2ff,
+		#8b86ff,
+		#eb2ae3
+	);
+}
+
+.bug-bg {
+	background-image: linear-gradient(
+		to bottom,
+		#e0dd2c,
+		#c7c423,
+		#aeab1a,
+		#969311,
+		#7e7c08
+	);
+}
+
+.default-bg {
+	background-color: #cfcfcf;
+}

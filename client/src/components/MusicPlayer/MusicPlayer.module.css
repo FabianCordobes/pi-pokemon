@@ -1,0 +1,44 @@
+.musicPlayer {
+   background-color: yellowgreen;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   max-width: max-content;
+   height: 2rem;
+   padding: 4px;
+   gap: 4px;
+   border-radius: 8px;
+}
+
+.musicPlayer h2 {
+   font-size: medium;
+   
+}
+
+/* .musicPlayer button {
+   height: fit-content;
+   
+} */
+.playButton {
+   padding: 0;
+   margin: 0;
+   padding-inline: 0;
+   border-width: 0;
+   padding-block: 0;
+}
+.playButton img {
+   width: 2rem;
+   padding: 0;
+   margin: 0;
+
+}
+/* 
+.playButtonPlaying {
+background-image: 'client/public/Images/pause_icon.jpg';
+}
+
+.playButtonPaused {
+   background-image: './Images/play_icon.jpg';
+
+} */

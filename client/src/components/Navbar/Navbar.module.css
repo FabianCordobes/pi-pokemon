@@ -1,0 +1,65 @@
+.nav {
+	/* height:8vh; */
+	max-height: 3rem;
+	width: 92vw;
+	background-image: linear-gradient(
+		to right,
+		#f0e6e6,
+		#c0b8b8,
+		#938d8d,
+		#686363,
+		#403d3d,
+		#453131,
+		#482526,
+		#49171a,
+		#74171e,
+		#a1111d,
+		#cd0517,
+		#f90000
+	);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 50;
+	position: fixed;
+
+	/* Añade una transición suave y un efecto de desvanecimiento */
+	transition: transform 0.5s ease-in-out, height 0.5s ease-in-out,
+		opacity 0.5s ease-in-out;
+	opacity: 1; /* Asegura que el navbar sea visible inicialmente */
+	
+	padding: 15px;
+	border-radius: 20px;
+	align-self: center;
+}
+
+.hidden {
+	transform: translateY(-100%);
+	opacity: 0; /* Oculta todo el navbar al hacer scroll hacia abajo */
+	pointer-events: none; /* Evita la interacción con los elementos ocultos */
+	/* Otros ajustes según sea necesario */
+}
+
+.logoContainer img {
+	max-width: 13rem;
+}
+
+.linkContainer a {
+	color: #fff; /* Color inicial, cambia a tu preferencia */
+	text-decoration: none;
+	transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.linkContainer a:hover {
+	color: #000; /* Color al pasar el mouse, cambia a tu preferencia */
+	transform: translateY(-1px);
+}
+
+.searchBarCont {
+	width: 20rem;
+}
+
+.activeLink {
+	background-color: yellow; /* Cambia el color temporalmente */
+	border-bottom: 2px solid #000;
+}
