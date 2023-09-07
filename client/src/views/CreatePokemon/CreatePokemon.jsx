@@ -5,6 +5,8 @@ import { getTypes, createPokemon, getPokemons } from '../../redux/actions';
 import { validate, valSelect } from '../../validators/validators';
 import style from './CreatePokemon.module.css';
 
+import pokedexImg from '/public/Images/pokedex.jpg';
+
 export default function CreatePokemon() {
 	//const DEFAULT_IMG = 'https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg';
 
@@ -111,26 +113,33 @@ export default function CreatePokemon() {
 	return (
 		<>
 			<div className={style.bgcreate}>
-				<h1 className={style.titulo}>Create your pokemon</h1>
-				<div className={style.main}>
+				<div className={style.imgCont}>
+					<img
+						src={pokedexImg}
+						alt="Pokedex"
+						className={style.pokedexImg}
+					/>
+				</div>
+				<div className={style.formContent}>
+					<h1>Create your pokemon</h1>
 					<form
 						className={style.formu}
 						onSubmit={(e) => handleSubmit(e)}>
-						<div className={style.left}>
-							<div>
+						<div>
+							<div className={style.inputContainer}>
 								<label className={style.labele}>Pokemon name </label>
 								<input
 									className={style.inputcreate}
 									type="text"
 									value={input.name}
 									name="name"
-									placeholder="Insert pokemon name..."
+									placeholder="Insert name..."
 									onChange={(e) => handleChange(e)}
 								/>
 								{errors.name && <p className={style.errors}>{errors.name}</p>}
 							</div>
-							<br />
-							<div>
+
+							<div className={style.inputContainer}>
 								<label className={style.labele}>Pokemon image </label>
 								<input
 									className={style.inputcreate}
@@ -142,8 +151,8 @@ export default function CreatePokemon() {
 								/>
 								{errors.image && <p className={style.errors}>{errors.image}</p>}
 							</div>
-							<br />
-							<div>
+
+							<div className={style.selectContainer}>
 								<label className={style.labele}>Choose types</label>
 								<select
 									className={style.selected}
@@ -178,10 +187,8 @@ export default function CreatePokemon() {
 								))}
 								{errorSelect.types && <p className={style.errors}>{errorSelect.types}</p>}
 							</div>
-							<br />
-						</div>
-						<div className={style.right}>
-							<div>
+
+							<div className={style.inputContainer}>
 								<label className={style.labele}>HP </label>
 								<input
 									className={style.inputcreate}
@@ -193,8 +200,8 @@ export default function CreatePokemon() {
 								/>
 								{errors.hp && <p className={style.errors}>{errors.hp}</p>}
 							</div>
-							<br />
-							<div>
+
+							<div className={style.inputContainer}>
 								<label className={style.labele}>Attack</label>
 								<input
 									className={style.inputcreate}
@@ -206,8 +213,10 @@ export default function CreatePokemon() {
 								/>
 								{errors.attack && <p className={style.errors}>{errors.attack}</p>}
 							</div>
-							<br />
-							<div>
+						</div>
+
+						<div>
+							<div className={style.inputContainer}>
 								<label className={style.labele}>Defense</label>
 								<input
 									className={style.inputcreate}
@@ -219,8 +228,8 @@ export default function CreatePokemon() {
 								/>
 								{errors.defense && <p className={style.errors}>{errors.defense}</p>}
 							</div>
-							<br />
-							<div>
+
+							<div className={style.inputContainer}>
 								<label className={style.labele}>Speed</label>
 								<input
 									className={style.inputcreate}
@@ -232,8 +241,8 @@ export default function CreatePokemon() {
 								/>
 								{errors.speed && <p className={style.errors}>{errors.speed}</p>}
 							</div>
-							<br />
-							<div>
+
+							<div className={style.inputContainer}>
 								<label className={style.labele}>Height</label>
 								<input
 									className={style.inputcreate}
@@ -245,8 +254,8 @@ export default function CreatePokemon() {
 								/>
 								{errors.height && <p className={style.errors}>{errors.height}</p>}
 							</div>
-							<br />
-							<div>
+
+							<div className={style.inputContainer}>
 								<label className={style.labele}>Weight</label>
 								<input
 									className={style.inputcreate}
@@ -258,24 +267,23 @@ export default function CreatePokemon() {
 								/>
 								{errors.weight && <p className={style.errors}>{errors.weight}</p>}
 							</div>
-							<br />
-						</div>
-						<div className={style.divcreatebutton}>
-							<input
-								className={style.createbutton}
-								type="submit"
-								value={'CREATE POKEMON'}
-								disabled={disabled}
-							/>
+
+							<div className={style.buttonContainer}>
+								<input
+									className={style.createbutton}
+									type="submit"
+									value={'CREATE POKEMON'}
+									disabled={disabled}
+								/>
+							</div>
 						</div>
 					</form>
-				</div>
-				<br />
-				{/* <div className={style.divhomebutton}>
+					{/* <div className={style.divhomebutton}>
 				<Link to="/home">
 					<button className={style.homebutton}>GO HOME</button>
 				</Link>
 			</div> */}
+				</div>
 			</div>
 		</>
 	);

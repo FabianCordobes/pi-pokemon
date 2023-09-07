@@ -1,7 +1,11 @@
 .nav {
 	/* height:8vh; */
 	max-height: 3rem;
-	width: 92vw;
+	width: 95%;
+	left: 1rem;
+	right: auto;
+	/* align-self: center; */
+	/* justify-self: center; */
 	background-image: linear-gradient(
 		to right,
 		#f0e6e6,

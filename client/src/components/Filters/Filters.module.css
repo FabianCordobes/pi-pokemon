@@ -1,0 +1,41 @@
+.filtersContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-image: linear-gradient(
+		to right,
+		#e9e6e6,
+		#c2bfbf,
+		#9d9a9a,
+		#797777,
+		#575555
+	);
+	max-width: 20rem;
+	padding: 10px;
+	border-radius: 5px;
+	margin: 10px;
+	margin-bottom: 20px;
+}
+
+.originFilter,
+.typeFilter,
+.sortFilter {
+	margin-right: 10px;
+}
+
+select {
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #961313;
+	cursor: pointer;
+	outline: none;
+}
+
+/* Style for the select options (optional) */
+/* select option {
+   
+ select
+ background-color: #fff;
+   color: #333;
+ } */

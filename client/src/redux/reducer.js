@@ -18,16 +18,17 @@ const initialState = {
 	types: [],
 	detailPokemon: {},
 	msg: '',
+	isPlaying: false,
+	audioIndex: 0,
 };
 
 export default function reducer(state = initialState, { payload, type }) {
 	switch (type) {
-
 		case RESET_PAGE:
-      return {
-        ...state,
-        numPage: 1,
-      };
+			return {
+				...state,
+				numPage: 1,
+			};
 
 		case GET_POKEMONS:
 			return {

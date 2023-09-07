@@ -2,8 +2,9 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Welcome from './views/Welcome/Welcome';
 import Home from './views/Home/Home';
-import Detail from './views/Detail/Detail';
 import CreatePokemon from './views/CreatePokemon/CreatePokemon';
+import DetailId from './views/Detail/DetailID';
+import DetailName from './views/Detail/DetailName';
 import Navbar from './components/Navbar/Navbar';
 // import { getPokemonByName } from './redux/actions';
 // import axios from 'axios';
@@ -42,7 +43,12 @@ const App = () => {
 				<Route
 					exact
 					path="/pokemon/:id"
-					element={<Detail />}
+					element={<DetailId />}
+				/>
+				<Route
+					exact
+					path="/pokemon/search/:name"
+					element={<DetailName />}
 				/>
 				<Route
 					exact

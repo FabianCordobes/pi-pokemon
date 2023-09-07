@@ -14,18 +14,17 @@ import {
 } from '../../redux/actions';
 // import Loading from '../Loading/Loading';
 import MusicPlayer from '../../components/MusicPlayer/MusicPlayer';
+import Filters from '../../components/Filters/Filters';
 
 const Home = () => {
 	const dispatch = useDispatch();
 	const allPokemons = useSelector((state) => state.pokemons);
 	const allTypes = useSelector((state) => state.types);
-	const msg = useSelector((state) => state.msg);
 	const [currentPage, setCurrentPage] = useState(1);
 	const pokemonsPerPage = 12;
 	const lastPokemonOfThePage = currentPage * pokemonsPerPage;
 	const firstPokemonOfThePage = lastPokemonOfThePage - pokemonsPerPage;
-	const currentPokemons = allPokemons.slice(firstPokemonOfThePage, lastPokemonOfThePage);
-
+	const currentPokemons = allPokemons && allPokemons.slice(firstPokemonOfThePage, lastPokemonOfThePage);
 	const pagination = (pageNumber) => {
 		setCurrentPage(pageNumber);
 	};
@@ -36,7 +35,6 @@ const Home = () => {
 		dispatch(clearPokemonDetails());
 		var value = '0px';
 		document.getElementById('navbar').style.transform = `translate(0,${value})`;
-
 	}, [dispatch]);
 
 	const handleFilterByOrigin = (event) => {
@@ -56,68 +54,27 @@ const Home = () => {
 		setCurrentPage(1);
 		setOrder(event.target.value);
 	};
+	// let url = "/"
+	// if(queryOrigin) url = url + "?queryOrigin=" + queryOrigin;
+	// if(queryFilter) url = url + "?queryFilter=" + queryOrigin;
 
 	// if (allPokemons.length === 0) return <Loading />;
 	// else
 	return (
 		<div className={style.homeContainer}>
-			<MusicPlayer  />
-				<div>
-					<div>
-						<select
-							defaultValue={'default'}
-							onChange={(e) => handleFilterByOrigin(e)}>
-							<option
-								value={'default'}
-								hidden>
-								origin
-							</option>
-							<option value="All">All</option>
-							<option value="PokeAPI">PokeAPI</option>
-							<option value="Created">Created</option>
-						</select>
-					</div>
+			<div className={style.homeHeader}>
+				<MusicPlayer />
 
-					<div>
-						<select
-							defaultValue={'default'}
-							onChange={(e) => handleFilterByType(e)}>
-							<option
-								value={'default'}
-								hidden>
-								Type
-							</option>
-							<option value="All">All</option>
-							{msg.length && alert(msg)}
-							{allTypes.map((type) => (
-								<option
-									key={type.id}
-									value={type.name}>
-									{type.name}
-								</option>
-							))}
-						</select>
-					</div>
+				<Filters
+					handleFilterByOrigin={handleFilterByOrigin}
+					handleFilterByType={handleFilterByType}
+					handleSort={handleSort}
+					order={order}
+					allTypes={allTypes}
+				/>
+			</div>
 
-					<div>
-						<select
-							defaultValue={'default'}
-							onChange={(e) => handleSort(e)}>
-							<option
-								value={'default'}
-								hidden>
-								Order
-							</option>
-							<option value="A-Z">A-Z</option>
-							<option value="Z-A">Z-A</option>
-							<option value="Ʌ Attack">+ Attack</option>
-							<option value="V Attack">- Attack</option>
-							<option value="id">ID</option>
-						</select>
-					</div>
-				</div>
 			<div>
-
 				<div className={style.divCardsContainer}>
 					{currentPokemons?.map((p) => (
 						<Link

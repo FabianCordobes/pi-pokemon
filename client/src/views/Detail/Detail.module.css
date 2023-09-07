@@ -1,0 +1,267 @@
+.hero {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
+	overflow: hidden;
+	background-size: cover;
+}
+
+.card {
+	position: absolute;
+   top: 7rem;
+	background-color: rgb(206, 197, 185);
+	color: #111;
+	padding: 16px 2px 16px 0;
+	border-radius: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: 0.5s;
+}
+
+.title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #e76357;
+	width: 60rem;
+	height: 3rem;
+	border-bottom: #000 solid 3px;
+	border-top: #000 solid 3px;
+	border-right: #000 solid 3px;
+}
+
+.title h2 {
+	position: relative;
+	left: 17rem;
+	color: #fff;
+}
+
+.title h2 {
+	-webkit-text-stroke: #6b6b6b 1px;
+}
+
+.content {
+	display: flex;
+	flex-direction: row-reverse;
+	gap: 20px;
+}
+
+.content h2,
+h3,
+p {
+	margin: 0;
+}
+
+.content img {
+	width: 15rem;
+}
+
+.left {
+	position: relative;
+	bottom: 20px;
+	right: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-bottom: #000 solid 3px;
+	border-top: #000 solid 3px;
+	border-right: #000 solid 3px;
+	border-top-right-radius: 16px;
+	border-bottom-right-radius: 16px;
+	width: 35rem;
+	background-color: #e76357;
+}
+
+.stats {
+	display: flex;
+	flex-direction: row;
+	width: 95%;
+	height: 17rem;
+	padding: 4px;
+	border-radius: 8px;
+	background-color: #424242;
+}
+
+.stat {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	border-radius: 4px;
+	background-color: #8c9cad;
+	border-right: #8d8888 solid 2px;
+}
+
+.stat div {
+	display: flex;
+	align-items: center;
+	height: 90%;
+	width: 100%;
+	padding: 0 6px 0 6px;
+	border-radius: 4px;
+	border-bottom: #8d8888 solid 3px;
+	font-size: 20px;
+	color: #fff;
+}
+
+.stat div:nth-child(odd) {
+	background-color: #8c9cad; /* Color para elementos impares (nombres de stats) */
+}
+
+.stat div:nth-child(even) {
+	background-color: #7b8c9c; /* Color para elementos pares (nombres de stats) */
+}
+
+.value {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	border-radius: 4px;
+	background-color: #e7efef;
+	border-left: #8d8888 solid 2px;
+}
+
+.value div {
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	height: 90%;
+	width: 100%;
+	border-radius: 4px;
+	border-bottom: #8d8888 solid 3px;
+	font-size: 25px;
+}
+
+.value p {
+	margin-right: 30px;
+}
+
+.value div:nth-child(odd) {
+	background-color: #e7efef; /* Color para elementos impares (valores de stats) */
+}
+
+.value div:nth-child(even) {
+	background-color: #ced6de; /* Color para elementos pares (valores de stats) */
+}
+
+.hp {
+	justify-content: center;
+}
+
+.right {
+	/* border: #000 solid 1px; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.detailHeader {
+	margin-top: 4px;
+	width: 20rem;
+	position: relative;
+	left: 2rem;
+	border: #000 solid 3px;
+	border-radius: 10px;
+}
+
+.detailHeader div {
+	/* border-radius: 8px; */
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	background-color: #8c9cad;
+}
+
+.detailHeader h2 {
+	/* border-radius: 8px; */
+	color: #e7efef;
+	-webkit-text-stroke: #6b6b6b 1px;
+
+
+	/* font-size: 18px; */
+}
+
+.detailHeader h3 {
+	/* border-radius: 8px; */
+
+	background-color: #e7efef;
+	padding-left: 20px;
+	font-size: 20px;
+}
+
+.detailHeader span {
+	font-size: 15px;
+	/* color: #fff; */
+}
+
+.detailHeader img {
+	object-fit: cover;
+	width: 3rem;
+}
+
+.detailImage img{
+   object-fit: cover;
+   width: 17.5rem;
+}
+
+.left .stats p {
+	font-size: 1.1em;
+	font-weight: 800;
+	-webkit-text-stroke: #6b6b6b 1px;
+}
+
+.types {
+	/* border: #000 solid 1px; */
+	display: flex;
+	flex-direction: column;
+	background-color: #8c9cad;
+	margin-top: 4px;
+	width: 20rem;
+	position: relative;
+	left: 2rem;
+	border: #000 solid 3px;
+	border-radius: 10px;
+	/* padding-left: 4px;  */
+}
+
+.types h4 {
+	margin: 0;
+	font-size: 20px;
+	padding-left: 8px;
+	height: 35px;
+	color: #e7efef;
+	-webkit-text-stroke: #6b6b6b 1px;
+}
+
+.types div {
+	display: flex;
+	flex-direction: row;
+	background-color: #ced6de;
+	padding-left: 8px;
+}
+
+.types button {
+	height: 50px;
+	font-weight: 400;
+	color: rgb(0, 0, 0);
+	padding: 5px;
+	border: none;
+	border-radius: 0.5rem;
+	text-decoration: none;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.link-to-back {
+	background-color: #fff;
+	transition: 0.5s;
+}
+
+.link-to-back:hover {
+	color: #fff;
+	background-color: #000;
+}

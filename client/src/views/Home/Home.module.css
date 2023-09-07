@@ -1,7 +1,14 @@
 .homeContainer {
-   margin-top: 100px;
+   margin-top: 80px;
    display: flex;
    flex-direction: column;
+}
+
+.homeHeader {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   /* max-width: 100%; */
 }
 
 .cardLink {
@@ -35,3 +42,4 @@
    /* justify-content: center; */
    /* align-items: center; */
 }
+

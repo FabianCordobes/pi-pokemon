@@ -10,8 +10,11 @@ import {
 	CLEAR_POKEMON_DETAILS,
 	GET_POKEMON_BY_NAME,
 	DELETE_POKEMON,
+	
 } from './actionType';
 import axios from 'axios';
+
+
 
 export function resetPage() {
 	return {
@@ -118,7 +121,6 @@ export const getPokemonByName = (payload) => {
 	return async function (dispatch) {
 		try {
 			await axios.get(`/pokemons?name=${payload}`).then((response) => {
-            
 				dispatch({
 					type: GET_POKEMON_BY_NAME,
 					payload: response.data,
