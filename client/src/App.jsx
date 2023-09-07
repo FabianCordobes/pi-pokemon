@@ -3,11 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 import Welcome from './views/Welcome/Welcome';
 import Home from './views/Home/Home';
 import CreatePokemon from './views/CreatePokemon/CreatePokemon';
-import DetailId from './views/Detail/DetailID';
+import DetailId from './views/Detail/DetailId';
 import DetailName from './views/Detail/DetailName';
 import Navbar from './components/Navbar/Navbar';
 // import { getPokemonByName } from './redux/actions';
-// import axios from 'axios';
 // import { useDispatch } from 'react-redux';
 
 // const dispatch = useDispatch();
