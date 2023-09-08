@@ -1,7 +1,7 @@
 .nav {
 	/* height:8vh; */
 	max-height: 3rem;
-	width: 95%;
+	width: 96%;
 	left: 1rem;
 	right: auto;
 	/* align-self: center; */
@@ -28,18 +28,18 @@
 	position: fixed;
 
 	/* Añade una transición suave y un efecto de desvanecimiento */
-	transition: transform 0.5s ease-in-out, height 0.5s ease-in-out,
-		opacity 0.5s ease-in-out;
-	opacity: 1; /* Asegura que el navbar sea visible inicialmente */
-	
+	/* transform: translateY(0); */
+	transition: 0.2s ease-in-out;
+	/* opacity: 1;  */
+
 	padding: 15px;
 	border-radius: 20px;
 	align-self: center;
 }
 
 .hidden {
-	transform: translateY(-100%);
-	opacity: 0; /* Oculta todo el navbar al hacer scroll hacia abajo */
+	transform: translateY(-100%) !important;
+	/* opacity: 0;  */
 	pointer-events: none; /* Evita la interacción con los elementos ocultos */
 	/* Otros ajustes según sea necesario */
 }
@@ -51,12 +51,14 @@
 .linkContainer a {
 	color: #fff; /* Color inicial, cambia a tu preferencia */
 	text-decoration: none;
-	transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+	transition: color 0.1s ease-in-out, transform 0.3s ease-in-out;
+	text-shadow: 0 3px 0 rgba(0, 0, 0, 0.8);
 }
 
 .linkContainer a:hover {
 	color: #000; /* Color al pasar el mouse, cambia a tu preferencia */
-	transform: translateY(-1px);
+	/* transform: translateY(11px); */
+	text-shadow: 0 3px 0 rgba(255, 255, 255, 0.8);
 }
 
 .searchBarCont {

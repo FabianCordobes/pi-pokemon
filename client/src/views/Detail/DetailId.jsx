@@ -12,6 +12,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import style from './Detail.module.css';
 
 import pokeballIcon from '/public/Images/masterBall.png';
+import Loading from '../../components/Loading/Loading';
 export default function DetailId() {
 	const [id, setId] = useState('');
 
@@ -46,110 +47,98 @@ export default function DetailId() {
 
 	// console.log(pokemonDetail.name);
 
-	// if (pokemonDetail === 'Pokemon not found') return <PokeNotFound />
-	// if (pokemonDetail.name === undefined) return <Loading />;
-	// else {
-	return (
-		<div>
-			<div className={style.hero}>
-				<Link
-					className="link-to-back"
-					to="/home"
-					style={{
-						// marginBottom: '0.5rem',
-						backgroundColor: '#fff',
-						color: '#000',
-						weight: '100px',
-						padding: '10px',
-						borderRadius: '6px',
-						textDecoration: 'none',
-						alignSelf: 'flex-start',
-						left: '77rem',
-						bottom: '32rem',
-						position: 'absolute',
-					}}>
-					Back
-				</Link>
-				<div className={style.card}>
-					{/* <div className={style.circle}></div> */}
-					<div className={style.title}>
-						<h2>Pokemon Detail</h2>
-					</div>
-					<div className={style.content}>
-						<div className={style.right}>
-							<div className={style.detailHeader}>
-								<div>
-									<img
-										src={pokeballIcon}
-										alt="Pokeball"
-									/>
-									<h2>{pokemonDetail.name}</h2>
-								</div>
-							</div>
-
-							<div className={style.detailImage}>
-								<img
-									src={pokemonDetail.image}
-									alt={pokemonDetail.name}
-								/>
-							</div>
-
-							<div className={style.types}>
-								<h4>Type</h4>
-								{pokemonDetail.type &&
-									pokemonDetail.type.map((type, index) => (
-										<div
-											key={index}
-											className={`${style.type} ${[type]}`}>
-											{type}
-										</div>
-									))}
-								{pokemonDetail && pokemonDetail?.id?.length > 30 && (
-									<button onClick={handleDelete}> Delete Pokemon </button>
-								)}
-							</div>
+	// if (pokemonDetail === 'Pokemon not found') return <PokeNotFound />;
+	if (pokemonDetail.name === undefined) return <Loading />;
+	else {
+		return (
+			<div>
+				<div className={style.hero}>
+					<Link
+						className={style.linkToBack}
+						to="/home">
+						Back
+					</Link>
+					<div className={style.card}>
+						{pokemonDetail && pokemonDetail?.id?.length > 30 && (
+							<button onClick={handleDelete}> Delete Pokemon </button>
+						)}
+						{/* <div className={style.circle}></div> */}
+						<div className={style.title}>
+							<h2>Pokemon Detail</h2>
 						</div>
-
-						<div className={style.left}>
-							<div className={style.stats}>
-								<div className={style.stat}>
-									<div className={style.hp}>
-										<p>HP</p>
-									</div>
+						<div className={style.content}>
+							<div className={style.right}>
+								<div className={style.detailHeader}>
 									<div>
-										<p>Attack</p>
-									</div>
-									<div>
-										<p>Defense</p>
-									</div>
-									<div>
-										<p>Speed</p>
-									</div>
-									<div>
-										<p>Height</p>
-									</div>
-									<div>
-										<p>Weight</p>
+										<img
+											src={pokeballIcon}
+											alt="Pokeball"
+										/>
+										<h2>{pokemonDetail.name}</h2>
 									</div>
 								</div>
-								<div className={style.value}>
-									<div className={style.hp}>
-										<p>{pokemonDetail.hp}</p>
+
+								<div className={style.detailImage}>
+									<img
+										src={pokemonDetail.image}
+										alt={pokemonDetail.name}
+									/>
+								</div>
+
+								<div className={style.types}>
+									<h4>Type</h4>
+									{pokemonDetail.type &&
+										pokemonDetail.type.map((type, index) => (
+											<div
+												key={index}
+												className={`${style.type} ${[type]}`}>
+												{type}
+											</div>
+										))}
+								</div>
+							</div>
+
+							<div className={style.left}>
+								<div className={style.stats}>
+									<div className={style.stat}>
+										<div className={style.hp}>
+											<p>HP</p>
+										</div>
+										<div>
+											<p>Attack</p>
+										</div>
+										<div>
+											<p>Defense</p>
+										</div>
+										<div>
+											<p>Speed</p>
+										</div>
+										<div>
+											<p>Height</p>
+										</div>
+										<div>
+											<p>Weight</p>
+										</div>
 									</div>
-									<div>
-										<p>{pokemonDetail.attack}</p>
-									</div>
-									<div>
-										<p>{pokemonDetail.defense}</p>
-									</div>
-									<div>
-										<p>{pokemonDetail.speed}</p>
-									</div>
-									<div>
-										<p>{pokemonDetail.height}</p>
-									</div>
-									<div>
-										<p>{pokemonDetail.weight}</p>
+									<div className={style.value}>
+										<div className={style.hp}>
+											<p>{pokemonDetail.hp}</p>
+										</div>
+										<div>
+											<p>{pokemonDetail.attack}</p>
+										</div>
+										<div>
+											<p>{pokemonDetail.defense}</p>
+										</div>
+										<div>
+											<p>{pokemonDetail.speed}</p>
+										</div>
+										<div>
+											<p>{pokemonDetail.height}</p>
+										</div>
+										<div>
+											<p>{pokemonDetail.weight}</p>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -157,7 +146,6 @@ export default function DetailId() {
 					</div>
 				</div>
 			</div>
-		</div>
-	);
+		);
+	}
 }
-// }

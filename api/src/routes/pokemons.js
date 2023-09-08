@@ -238,10 +238,10 @@ router.post('/', async (req, res, next) => {
 
 //Eliminar por id de la database
 
-router.delete('/delete/:id', async (req, res, next) => {
+router.delete('/:id', async (req, res, next) => {
 	const { id } = req.params;
 	// console.log(id);
-	if (id.length < 99) res.json('ID must be a pokemon from the database');
+	if (id.length < 30) res.json('ID must be a pokemon from the database');
 	try {
 		const pokemon = await Pokemon.findOne({ where: { id } });
 		// console.log(pokemon);

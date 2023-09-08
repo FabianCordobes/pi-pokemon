@@ -1,21 +1,29 @@
 .cardContainer {
-	/* background-color: aliceblue; */
-	/* width: 100%; */
-	/* max-width: 25% ; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	/* gap: 5px; */
-	min-height: 23rem;
+	height: 100%;
 	border-radius: 20px;
 	padding: 5px;
+	border: #9b8a8a solid 3px;
+	transition: ease-in-out, 500ms;
+	/* margin-bottom: 16rem; */
+
+
+}
+
+.cardContainer:hover {
+	transform: translateY(-10px);
 }
 
 .cardContainer h2 {
 	font-size: bold;
 	text-decoration: none;
 	color: #000000;
+   text-shadow: 0 3px 0 rgba(255, 255, 255, 0.8);
+	font-size: 25px;
+
 }
 
 .cardImg {
@@ -24,17 +32,15 @@
 }
 
 .cardTypeContainer {
-	/* min-width: 50%; */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	flex-direction: column; 
-
-	gap: 10px;
+	flex-direction: row; 
+	gap: 3rem;
 }
 
 .cardTypeImg img {
-   max-width: 30px;
+   width: 40px;
    object-fit: cover;
    border-radius: 4px;
 	scale: 2;

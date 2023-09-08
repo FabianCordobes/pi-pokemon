@@ -51,28 +51,34 @@ const MusicPlayer = () => {
 	};
 
 	return (
-    <div className={style.musicPlayer}>
+		<div className={style.musicPlayer}>
 			<h2>{audioList[audioIndex].title}</h2>
-			<button onClick={prevTrack} className={style.playButton}>
-				<img
-					src={prevIcon}
-					alt="Preview Track"
-				/>
-			</button>
-			<button
-				onClick={isPlaying ? pauseAudio : playAudio}
-				className={style.playButton}>
-				<img
-					src={isPlaying ? pauseIcon : playIcon}
-					alt={isPlaying ? 'Pause Music' : 'Play Music'}
-				/>
-			</button>
-			<button onClick={nextTrack} className={style.playButton}>
-				<img
-					src={nextIcon}
-					alt="Next Track"
-				/>
-			</button>
+			<div>
+				<button
+					onClick={prevTrack}
+					className={style.playButton}>
+					<img
+						src={prevIcon}
+						alt="Preview Track"
+					/>
+				</button>
+				<button
+					onClick={isPlaying ? pauseAudio : playAudio}
+					className={style.playButton}>
+					<img
+						src={isPlaying ? pauseIcon : playIcon}
+						alt={isPlaying ? 'Pause Music' : 'Play Music'}
+					/>
+				</button>
+				<button
+					onClick={nextTrack}
+					className={style.playButton}>
+					<img
+						src={nextIcon}
+						alt="Next Track"
+					/>
+				</button>
+			</div>
 		</div>
 	);
 };

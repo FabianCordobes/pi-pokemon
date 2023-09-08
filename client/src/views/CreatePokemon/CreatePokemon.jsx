@@ -269,12 +269,12 @@ export default function CreatePokemon() {
 							</div>
 
 							<div className={style.buttonContainer}>
-								<input
-									className={style.createbutton}
+								<button
+									className={style.createButton}
 									type="submit"
-									value={'CREATE POKEMON'}
+									// value={'CREATE POKEMON'}
 									disabled={disabled}
-								/>
+								>CREATE POKEMON</button>
 							</div>
 						</div>
 					</form>

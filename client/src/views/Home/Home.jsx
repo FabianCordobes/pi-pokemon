@@ -12,7 +12,7 @@ import {
 	getTypes,
 	sortBy,
 } from '../../redux/actions';
-// import Loading from '../Loading/Loading';
+import Loading from '../../components/Loading/Loading';
 import MusicPlayer from '../../components/MusicPlayer/MusicPlayer';
 import Filters from '../../components/Filters/Filters';
 
@@ -24,7 +24,8 @@ const Home = () => {
 	const pokemonsPerPage = 12;
 	const lastPokemonOfThePage = currentPage * pokemonsPerPage;
 	const firstPokemonOfThePage = lastPokemonOfThePage - pokemonsPerPage;
-	const currentPokemons = allPokemons && allPokemons.slice(firstPokemonOfThePage, lastPokemonOfThePage);
+	const currentPokemons =
+		allPokemons && allPokemons.slice(firstPokemonOfThePage, lastPokemonOfThePage);
 	const pagination = (pageNumber) => {
 		setCurrentPage(pageNumber);
 	};
@@ -58,49 +59,55 @@ const Home = () => {
 	// if(queryOrigin) url = url + "?queryOrigin=" + queryOrigin;
 	// if(queryFilter) url = url + "?queryFilter=" + queryOrigin;
 
-	// if (allPokemons.length === 0) return <Loading />;
-	// else
-	return (
-		<div className={style.homeContainer}>
-			<div className={style.homeHeader}>
-				<MusicPlayer />
-
-				<Filters
-					handleFilterByOrigin={handleFilterByOrigin}
-					handleFilterByType={handleFilterByType}
-					handleSort={handleSort}
-					order={order}
-					allTypes={allTypes}
-				/>
-			</div>
-
-			<div>
-				<div className={style.divCardsContainer}>
-					{currentPokemons?.map((p) => (
-						<Link
-							to={`/pokemon/${p.id}`}
-							key={p.id}
-							className={style.cardLink}>
-							<Card
-								key={p.id}
-								name={p.name}
-								image={p.image}
-								type={p.type}
-							/>
-						</Link>
-					))}
-				</div>
-				<div>
+	if (allPokemons.length === 0) return <Loading />;
+	else
+		return (
+			<div className={style.homeContainer}>
+				<div className={style.homeHeader}>
+					<MusicPlayer />
 					<Pagination
 						pokemonsPerPage={pokemonsPerPage}
 						allPokemons={allPokemons.length}
 						pagination={pagination}
 						currentPage={currentPage}
 					/>
+					<Filters
+						handleFilterByOrigin={handleFilterByOrigin}
+						handleFilterByType={handleFilterByType}
+						handleSort={handleSort}
+						order={order}
+						allTypes={allTypes}
+						
+					/>
+				</div>
+
+				<div>
+					<div className={style.divCardsContainer}>
+						{currentPokemons?.map((p) => (
+							<Link
+								to={`/pokemon/${p.id}`}
+								key={p.id}
+								className={style.cardLink}>
+								<Card
+									key={p.id}
+									name={p.name}
+									image={p.image}
+									type={p.type}
+								/>
+							</Link>
+						))}
+					</div>
+					<div style={{marginTop:'10px'}}>
+						<Pagination
+							pokemonsPerPage={pokemonsPerPage}
+							allPokemons={allPokemons.length}
+							pagination={pagination}
+							currentPage={currentPage}
+						/>
+					</div>
 				</div>
 			</div>
-		</div>
-	);
+		);
 };
 
 export default Home;
