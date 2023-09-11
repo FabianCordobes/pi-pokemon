@@ -9,7 +9,7 @@ import store from './redux//store.js';
 import axios from 'axios';
 // dotenv.config();
 
-axios.defaults.baseURL = 'http://localhost:5040/';
+axios.defaults.baseURL = 'https://pi-pokemon-rs0d.onrender.com/';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<Provider store={store}>
