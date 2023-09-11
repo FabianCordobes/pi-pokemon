@@ -30,27 +30,22 @@ const App = () => {
 			<Navbar />
 			<Routes>
 				<Route
-					exact
 					path="/"
 					element={<Welcome />}
 				/>
 				<Route
-					exact
 					path="/home"
 					element={<Home />}
 				/>
 				<Route
-					exact
 					path="/pokemon/:id"
 					element={<DetailId />}
 				/>
 				<Route
-					exact
 					path="/pokemon/search/:name"
 					element={<DetailName />}
 				/>
 				<Route
-					exact
 					path="/create"
 					element={<CreatePokemon />}
 				/>
