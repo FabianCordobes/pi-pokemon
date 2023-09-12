@@ -5,15 +5,12 @@ import SearchBar from '../SearchBar/SearchBar';
 import title from '/Images/pokemon_title.png';
 import { useMedia } from 'react-use';
 
-import { MdClose, MdMenu } from 'react-icons/md';
-
 const Navbar = () => {
 	const [isNavVisible, setIsNavVisible] = useState(true); // Estado para controlar la visibilidad de la barra de navegación
 	const [prevScrollPos, setPrevScrollPos] = useState(0);
 
 	const [isOpen, setIsOpen] = useState(false);
 	const isMobile = useMedia('(max-width: 768px)');
-
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -35,26 +32,32 @@ const Navbar = () => {
 		};
 	}, [prevScrollPos]);
 
+	const handleCloseMenu = () => {
+		setIsOpen(!isOpen);
+	};
+
 	return (
 		<nav
 			id="navbar"
 			className={`${style.nav} ${isNavVisible ? '' : style.hidden}`}>
 			<div className={style.logoContainer}>
-				<img
-					src={title}
-					alt="Title"
-				/>
+				<Link to={'/home'}>
+					<img
+						src={title}
+						alt="Title"
+					/>
+				</Link>
 			</div>
 			{isMobile ? (
 				<>
 					<button
-						onClick={() => setIsOpen(!isOpen)}
+						onClick={handleCloseMenu}
 						style={{ fontSize: '2rem', marginRight: '20px', borderRadius: '8px' }}>
-						{isOpen ? <MdClose /> : <MdMenu />}
+						{isOpen ? 'X' : '<'}
 					</button>
 					{isOpen && (
 						<div className={`${style.navMenu} ${isOpen ? style['menuOpen'] : ''}`}>
-							<SearchBar />
+							<SearchBar handleCloseMenu={handleCloseMenu} />
 							<div
 								style={{
 									display: 'flex',
@@ -63,10 +66,10 @@ const Navbar = () => {
 								}}>
 								<div className={style.linkContainer}>
 									<NavLink
-										to={'/create'}
+										to={'/home'}
 										activeClassName={style.activeLink}
-										onClick={() => setIsOpen(!isOpen)}>
-										<h1>Create Pokemon</h1>
+										onClick={handleCloseMenu}>
+										<h1>Home</h1>
 									</NavLink>
 								</div>
 
@@ -74,7 +77,7 @@ const Navbar = () => {
 									<NavLink
 										to={'/create'}
 										activeClassName={style.activeLink}
-										onClick={() => setIsOpen(!isOpen)}>
+										onClick={handleCloseMenu}>
 										<h1>Create Pokemon</h1>
 									</NavLink>
 								</div>

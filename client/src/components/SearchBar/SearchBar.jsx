@@ -7,7 +7,7 @@ import style from './SearchBar.module.css';
 import { getPokemonByName } from '../../redux/actions';
 import { Link } from 'react-router-dom';
 
-const SearchBar = () => {
+const SearchBar = ({handleCloseMenu}) => {
 	const [name, setName] = useState('');
 	const dispatch = useDispatch();
 
@@ -36,7 +36,7 @@ const SearchBar = () => {
 					name="id"
 					placeholder="Insert name..."
 				/>
-				<Link to={`/pokemon/search/${name}`}>
+				<Link to={`/pokemon/search/${name}`} onClick={handleCloseMenu}>
 					<button
 						className={style.button}
 						type="submit"
