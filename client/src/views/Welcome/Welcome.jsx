@@ -10,7 +10,7 @@ function Welcome() {
 
 	setTimeout(function () {
 		document.getElementById('afterIntro').style.opacity = 1;
-	}, 25000);
+	}, 27000);
 
 	useEffect(() => {
 		var value = '-500px';
