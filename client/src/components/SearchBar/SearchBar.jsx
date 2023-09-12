@@ -21,14 +21,10 @@ const SearchBar = () => {
 		setName(event.target.value);
 	};
 
-	// const add = () => {
-	// 	dispatch(getPokemonByName(name));
-	// 	setName('');
-	// };
+	
 
 	return (
 		<div>
-			{/* <label>Insert : </label> */}
 			<form
 				className={style.form}
 				onSubmit={handleSubmit}>

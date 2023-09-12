@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import audioList from '../../utils/audioData';
 import style from './MusicPlayer.module.css';
 const playIcon = '/Images/play_icon.jpg'; // Ruta de la imagen de reproducción

@@ -55,9 +55,6 @@ const Home = () => {
 		setCurrentPage(1);
 		setOrder(event.target.value);
 	};
-	// let url = "/"
-	// if(queryOrigin) url = url + "?queryOrigin=" + queryOrigin;
-	// if(queryFilter) url = url + "?queryFilter=" + queryOrigin;
 
 	if (allPokemons.length === 0) return <Loading />;
 	else
@@ -65,23 +62,24 @@ const Home = () => {
 			<div className={style.homeContainer}>
 				<div className={style.homeHeader}>
 					<MusicPlayer />
-					<Pagination
-						pokemonsPerPage={pokemonsPerPage}
-						allPokemons={allPokemons.length}
-						pagination={pagination}
-						currentPage={currentPage}
-					/>
-					<Filters
-						handleFilterByOrigin={handleFilterByOrigin}
-						handleFilterByType={handleFilterByType}
-						handleSort={handleSort}
-						order={order}
-						allTypes={allTypes}
-						
-					/>
+					<div className={style.columnReverse}>
+						<Pagination
+							pokemonsPerPage={pokemonsPerPage}
+							allPokemons={allPokemons.length}
+							pagination={pagination}
+							currentPage={currentPage}
+						/>
+						<Filters
+							handleFilterByOrigin={handleFilterByOrigin}
+							handleFilterByType={handleFilterByType}
+							handleSort={handleSort}
+							order={order}
+							allTypes={allTypes}
+						/>
+					</div>
 				</div>
 
-				<div>
+				<div className={style.center}>
 					<div className={style.divCardsContainer}>
 						{currentPokemons?.map((p) => (
 							<Link
@@ -97,7 +95,7 @@ const Home = () => {
 							</Link>
 						))}
 					</div>
-					<div style={{marginTop:'10px'}}>
+					<div style={{ marginTop: '10px' }}>
 						<Pagination
 							pokemonsPerPage={pokemonsPerPage}
 							allPokemons={allPokemons.length}

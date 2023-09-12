@@ -1,11 +1,8 @@
 .nav {
-	/* height:8vh; */
 	max-height: 3rem;
 	width: 96%;
 	left: 1rem;
 	right: auto;
-	/* align-self: center; */
-	/* justify-self: center; */
 	background-image: linear-gradient(
 		to right,
 		#f0e6e6,
@@ -68,4 +65,32 @@
 .activeLink {
 	background-color: yellow; /* Cambia el color temporalmente */
 	border-bottom: 2px solid #000;
+}
+
+/* Regular Navbar styles */
+
+@media (max-width: 768px) {
+	.navMenu {
+		background-color: gray;
+		position: absolute;
+		top: 5rem;
+		left: 1.9rem;
+		width: 85%;
+		height: 80vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 5rem;
+		border-radius: 20px;
+	}
+
+	.menuOpen::before {
+		transform: translateX(-200px); /* Esto mostrará el menú en su posición normal */
+		transition: 0.6s ease-in-out; /* Define la duración y el efecto de transición */
+
+	}
+	.menuOpen::after {
+		transform: translateX(0px); /* Esto mostrará el menú en su posición normal */
+
+	}
 }

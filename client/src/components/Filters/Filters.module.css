@@ -32,10 +32,10 @@ select {
 	outline: none;
 }
 
-/* Style for the select options (optional) */
-/* select option {
-   
- select
- background-color: #fff;
-   color: #333;
- } */
+@media (max-width: 768px){
+	.filtersContainer {
+	min-width: 21rem;
+		margin-bottom: 0;
+	}
+	
+}

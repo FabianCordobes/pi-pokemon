@@ -15,6 +15,8 @@ export default function CreatePokemon() {
 	const pokeTypes = useSelector((state) => state.types);
 	const pokemons = useSelector((state) => state.pokemons);
 
+
+	
 	const [errors, setErrors] = useState({});
 	const [errorSelect, setErrorSelect] = useState({});
 	const [disabled, setDisabled] = useState(true);
@@ -111,7 +113,6 @@ export default function CreatePokemon() {
 	};
 
 	return (
-		<>
 			<div className={style.bgcreate}>
 				<div className={style.imgCont}>
 					<img
@@ -215,7 +216,7 @@ export default function CreatePokemon() {
 							</div>
 						</div>
 
-						<div>
+						<div className={style.center}>
 							<div className={style.inputContainer}>
 								<label className={style.labele}>Defense</label>
 								<input
@@ -273,18 +274,13 @@ export default function CreatePokemon() {
 									className={style.createButton}
 									type="submit"
 									// value={'CREATE POKEMON'}
-									disabled={disabled}
-								>CREATE POKEMON</button>
+									disabled={disabled}>
+									CREATE POKEMON
+								</button>
 							</div>
 						</div>
 					</form>
-					{/* <div className={style.divhomebutton}>
-				<Link to="/home">
-					<button className={style.homebutton}>GO HOME</button>
-				</Link>
-			</div> */}
 				</div>
-			</div>
-		</>
+		</div>
 	);
 }

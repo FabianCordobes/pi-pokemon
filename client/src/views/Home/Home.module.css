@@ -1,49 +1,54 @@
 .homeContainer {
 	margin: 85px 16px 0px 16px;
-	/* margi */
 	display: flex;
 	flex-direction: column;
 }
-
-
-
-
 
 .homeHeader {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	/* max-width: 100%; */
+}
+
+.columnReverse {
+	display: flex;
+
 }
 
 .cardLink {
 	text-decoration: none;
-	/* max-width: 25%; */
 }
 .divCardsContainer {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 30px;
-	/* justify-content: center; */
-	/* align-items: center; */
-	/* width: 60rem; */
-	/* height: 100%; */
-	/* margin: 5px; */
 }
 
-/* .cardContainer {
-   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  justify-content: space-around;
-  justify-items: center;
-  padding: 2px 40px;
-  margin: 20px 40px;
-} */
 .musicPlayerCont {
-	/* justify-self: flex-start; */
-
 	display: flex;
-	/* flex-direction: column; */
-	/* justify-content: center; */
-	/* align-items: center; */
 }
+
+@media (max-width:768px) {
+	.homeHeader {
+		flex-direction: column;
+	}
+
+	.divCardsContainer {
+		grid-template-columns: repeat(1, 1fr);
+		
+	}
+
+	.center {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.columnReverse {
+		flex-direction: column-reverse;
+		justify-content: center;
+		align-items: center;
+	}
+}
+

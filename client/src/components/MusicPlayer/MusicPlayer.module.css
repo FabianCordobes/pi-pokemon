@@ -1,52 +1,46 @@
 .musicPlayer {
-   background-color: yellowgreen;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
-   /* max-width: max-content; */
-   width: 19rem;
-   height: 2rem;
-   padding: 4px;
-   gap: 4px;
-   border-radius: 8px;
+	background-color: yellowgreen;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	/* max-width: max-content; */
+	width: 19rem;
+	height: 2rem;
+	padding: 4px;
+	gap: 4px;
+	border-radius: 8px;
 }
 
 .musicPlayer div {
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   align-items: center;
-   gap: 4px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 4px;
 }
 .musicPlayer h2 {
-   font-size: medium;
-   
+	font-size: medium;
 }
 
 .musicPlayer button {
-   cursor: pointer;
-   
+	cursor: pointer;
 }
 .playButton {
-   padding: 0;
-   margin: 0;
-   padding-inline: 0;
-   border-width: 0;
-   padding-block: 0;
+	padding: 0;
+	margin: 0;
+	padding-inline: 0;
+	border-width: 0;
+	padding-block: 0;
 }
 .playButton img {
-   width: 2rem;
-   padding: 0;
-   margin: 0;
-
-}
-/* 
-.playButtonPlaying {
-background-image: 'client/public/Images/pause_icon.jpg';
+	width: 2rem;
+	padding: 0;
+	margin: 0;
 }
 
-.playButtonPaused {
-   background-image: './Images/play_icon.jpg';
-
-} */
+@media (max-width: 768px) {
+	.musicPlayer {
+		width: 22rem;
+	}
+}
