@@ -11,6 +11,7 @@
   display: inline-block;
   text-align: left;
   top: 8px;
+  left: 68rem;
 }
 .checkbox {
   display: none;
@@ -42,7 +43,7 @@
 .inner:before {
   content: "YES";
   padding-left: 10px;
-  background-color: #060;
+  background-color: rgb(153, 5, 5);
   color: #fff;
 }
 .inner:after {

@@ -1,8 +1,7 @@
-import  { useEffect } from 'react'
+import { useEffect } from 'react';
 import style from './Welcome.module.css';
 import { Link } from 'react-router-dom';
 import ToggleSwitch from '../../components/ToggleSwitch/ToggleSwitch';
-import { useState } from 'react';
 function Welcome() {
 	const handleClickVideo = () => {
 		const video = document.getElementById('video');
@@ -13,22 +12,15 @@ function Welcome() {
 		document.getElementById('afterIntro').style.opacity = 1;
 	}, 25000);
 
-	// const [audio] = useState(new Audio('/Audios/pallet_town.mp3'));
-
-	// function playAudio() {
-	// 	audio.currentTime = 0;
-	// 	audio.play();
-	// }
-	// audio.loop = true;
-
-	  useEffect(() => {
-	    var value = "-500px";
-	    document.getElementById('navbar').style.transform=`translate(0,${value})`;
-	  },[])
+	useEffect(() => {
+		var value = '-500px';
+		document.getElementById('navbar').style.transform = `translate(0,${value})`;
+	}, []);
 
 	return (
 		<div className={style.hero}>
-			<div onChange={handleClickVideo}>
+			<div
+				onChange={handleClickVideo}>
 				<ToggleSwitch label=" " />
 				<p
 					id="parrafo"
@@ -55,10 +47,7 @@ function Welcome() {
 			<div
 				className={style.content}
 				id="afterIntro">
-				{/* <h1>POKEMON</h1> */}
-				<button
-					// onClick={playAudio}
-					className={style.btn}>
+				<button className={style.btn}>
 					<Link
 						to="/home"
 						className={style.linkToHome}></Link>
