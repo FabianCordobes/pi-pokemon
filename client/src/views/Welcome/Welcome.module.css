@@ -46,7 +46,7 @@
 }
 
 .btn {
-	background-color: transparent;
+	background-color: white;
 	background-image: url('./Images/start_btn.png');
 	cursor: pointer;
 	position: relative;
@@ -57,6 +57,7 @@
 	border: 0 solid;
 	right: 85px;
 	top: 20px;
+	z-index: 999999;
 }
 
 .btn:hover {
