@@ -5,12 +5,12 @@ import {
 	clearPokemonDetails,
 	deletePokemon,
 } from '../../redux/actions'; // Importación de acciones de Redux
-// import Loading from '../Loading/Loading'; // Componente de carga
-// import PokeNotFound from '../NotFound/PokeNotFound'; // Componente de Pokémon no encontrado
+
 import style from './Detail.module.css'; // Importación de hojas de estilo
 import { useNavigate, Link } from 'react-router-dom';
 import pokeballIcon from '/public/Images/masterBall.png';
 import Loading from '../../components/Loading/Loading';
+import NotFound from '../../components/NotFound/NotFound';
 
 export default function DetailName() {
 	const navigate = useNavigate();
@@ -44,9 +44,9 @@ export default function DetailName() {
 		navigate('/home'); // Redirigir al usuario a la página de inicio
 	};
 
-	// if (pokemonDetail === 'Pokemon not found') {
-	// 	return <PokeNotFound />; // Mostrar un componente de Pokémon no encontrado
-	// }
+	if (pokemonDetail === 'Pokemon not found') {
+		return <NotFound />; // Mostrar un componente de Pokémon no encontrado
+	}
 
 	if (pokemonDetail.name === undefined) return <Loading />;
 	else {

@@ -1,0 +1,54 @@
+.div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	background-color: #272222;
+}
+
+.h1 {
+	font-family: 'Kanit', sans-serif;
+	font-size: 5rem;
+	font-weight: 400;
+	color: #fff;
+	margin: 0px;
+}
+
+.h2 {
+	font-family: 'Kanit', sans-serif;
+	font-size: 4rem;
+	font-weight: 400;
+	color: #fff;
+	margin-top: 0px;
+	margin-bottom: 25px;
+}
+
+.button {
+	font-family: 'Pixelation', sans-serif;
+
+	font-size: 1rem;
+	font-weight: 400;
+	color: rgb(0, 0, 0);
+	height: 2.5rem;
+	width: 9rem;
+	background-color: rgb(199, 13, 13);
+	border: none;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	margin: 0.5rem;
+	text-decoration: none;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.button:hover {
+	background-color: rgb(158, 0, 0);
+	color: rgb(255, 255, 255);
+	transform: translateY(-1px);
+}
+
+.button:active {
+   border: 3px solid black;
+}

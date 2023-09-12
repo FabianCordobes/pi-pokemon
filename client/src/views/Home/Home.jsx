@@ -13,7 +13,6 @@ import {
 	sortBy,
 } from '../../redux/actions';
 import Loading from '../../components/Loading/Loading';
-import MusicPlayer from '../../components/MusicPlayer/MusicPlayer';
 import Filters from '../../components/Filters/Filters';
 
 const Home = () => {
@@ -61,7 +60,6 @@ const Home = () => {
 		return (
 			<div className={style.homeContainer}>
 				<div className={style.homeHeader}>
-					<MusicPlayer />
 					<div className={style.columnReverse}>
 						<Pagination
 							pokemonsPerPage={pokemonsPerPage}
